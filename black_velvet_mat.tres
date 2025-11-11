@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cybuwaavaamvy"]
+
+[ext_resource type="Texture2D" uid="uid://ctrc8h6xyslc5" path="res://textures/fabric_190-1K/fabric_190_Albedo-1K_black.png" id="1_h85t2"]
+[ext_resource type="Texture2D" uid="uid://dkbuyp00cvqdm" path="res://textures/fabric_190-1K/fabric_190_Normal-1K.png" id="4_4ion1"]
+[ext_resource type="Texture2D" uid="uid://ccjj3u2qltdaq" path="res://textures/fabric_190-1K/fabric_190_Roughness-1K.png" id="5_10nsm"]
+
+[resource]
+albedo_texture = ExtResource("1_h85t2")
+metallic = 1.0
+metallic_specular = 0.94
+roughness_texture = ExtResource("5_10nsm")
+emission = Color(0.164306, 0.24527, 0.329023, 1)
+emission_energy_multiplier = 0.28
+normal_enabled = true
+normal_scale = 1.47
+normal_texture = ExtResource("4_4ion1")
+rim_tint = 0.6
+heightmap_scale = 0.224
+uv1_scale = Vector3(3, 3, 3)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4u6vf6dijh7u"]
+
+[ext_resource type="PackedScene" uid="uid://rsc76l1javpi" path="res://dice/12_sided_rigid.tscn" id="1_4rvgi"]
+
+[sub_resource type="Environment" id="Environment_hvhwi"]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(0.74558, 0.74558, 0.74558, 1)
+
+[node name="ColorButtonScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hvhwi")
+
+[node name="12_sided_rigid" parent="." instance=ExtResource("1_4rvgi")]
+transform = Transform3D(0.997434, -0.071497, 0.00349065, -0.0714974, -0.99744, 8.74227e-08, 0.00348171, -0.00024966, -0.999994, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.52256)
+light_energy = 6.12
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.28876)
+fov = 32.6865
+size = 0.928009
+far = 4.0
+
+[editable path="12_sided_rigid"]

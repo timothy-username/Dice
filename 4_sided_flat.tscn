@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=4 uid="uid://k2k5e8j68jsy"]
+
+[ext_resource type="Texture2D" uid="uid://biw1p6etw88a" path="res://external/textures/numbers.png" id="1_avt6e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76vo"]
+resource_name = "dice material with numbers overlay"
+cull_mode = 2
+albedo_texture = ExtResource("1_avt6e")
+roughness = 0.554545
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n2jf7"]
+_surfaces = [{
+"aabb": AABB(-0.170798, -0.120773, -0.295831, 0.512394, 0.48309, 0.591661),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAAACAAMA"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AABVVf///38AAP//AAD/fwAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3t81a"]
+resource_name = "dice_Solid_011"
+_surfaces = [{
+"aabb": AABB(-0.170798, -0.120773, -0.295831, 0.512394, 0.48309, 0.591661),
+"attribute_data": PackedByteArray("5jeo+dhaL9LJfaj57qMC0uDGe/n8gHv58Fk7qeJ8tND/NrTQCX4/0fugxqnswz/R"),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsA"),
+"material": SubResource("StandardMaterial3D_i76vo"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAP//V5lVVf///39Xmf//AAD/f1eZAAAAAAAAxtlVVf///3/G2QAAAAD//8bZ//8AAP9/3v5VVf///3/e/gAAAAAAAN7+AAAAAP//VNX//wAA/39U1QAAAAAAAFTVWbk7LVm5Oy1ZuTstZ+qFxWfqhcVn6oXFb7+iqG+/oqhvv6KoVFVUVVRVVFVUVVRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n2jf7")
+
+[node name="4_sided_flat" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3t81a")
+skeleton = NodePath("")

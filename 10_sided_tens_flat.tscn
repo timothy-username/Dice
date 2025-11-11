@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=4 uid="uid://ddih6amcyx4wy"]
+
+[ext_resource type="Texture2D" uid="uid://biw1p6etw88a" path="res://external/textures/numbers.png" id="1_2ensv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76vo"]
+resource_name = "dice material with numbers overlay"
+cull_mode = 2
+albedo_texture = ExtResource("1_2ensv")
+roughness = 0.554545
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d5g6w"]
+_surfaces = [{
+"aabb": AABB(-0.312879, -0.297727, -0.32898, 0.625757, 0.595454, 0.65796),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAACAAMAAQAEAAMAAAADAAUAAwAGAAUAAAAFAAYAAwAEAAYAAAAGAAcABwAGAAQABwAEAAgAAAAHAAgACQAIAAQAAAAIAAkACQAEAAoAAAAJAAoACgAEAAEAAAALAAEACgABAAsAAAAKAAsA"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP9/AAAAAG+NjacAAOQwj3KM5wAA/39vjf//AAD/f////38AABrPj3KM5wAA//9vjY2nAAD//49ycVgAABrPb41yGAAA/3+PcgAAAADkMG+NchgAAAAAj3JxWAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6emn2"]
+resource_name = "dice_Cone_005"
+_surfaces = [{
+"aabb": AABB(-0.312879, -0.297727, -0.32898, 0.625757, 0.595454, 0.65796),
+"attribute_data": PackedByteArray("XvWVZUn17Lyc6iys//9mrHvVYKiP1bj/2soy7z3g+O5FzrhlWc4QvaTDiawH2U+sOaIJZk6iYb2Yl9qs+6yhrO23n70CuEhmo8IZrUCt36wdsz7vf8h478q9///fvaeozn5MrTCUE62DidO9bol7Zh6PF/8yj7+n05mQ7nGEV+6u1w+sEO1IrFviz7xv4ndl+ac7qOSnk/83ndPumbIN7w=="),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUA"),
+"material": SubResource("StandardMaterial3D_i76vo"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(2.00008, 0.384194, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("/38AAP9/ae0AAG+Njadp7eQwj3KM52ntAACPcnFYae3/fwAA/3/g//9/b43//+D/Gs+Pcozn4P/kMI9yjOfg//9/AAD/f2nt//9vjY2nae3//49ycVhp7RrPj3KM52nt/38AAP9/muEaz2+Nchia4f9/j3IAAJrh//+PcnFYmuH/f49yAADy//9/////f/L/5DBvjXIY8v8az2+Nchjy/+Qwb41yGCvRAABvjY2nK9EAAI9ycVgr0f9/////fyvRAABvjY2nlqj/f2+N//+WqOQwj3KM55ao/3////9/lqj//49ycVhD0f9/////f0PRGs9vjXIYQ9H//2+NjadD0f9/b43//5ao//9vjY2nlqgaz49yjOeWqP9/////f5ao/38AAP9/muHkMG+Nchia4QAAj3JxWJrh/3+PcgAAmuF/VElnf1RJZ39USWd/VElneCXv/3gl7/94Je//eCXv/7UYf9S1GH/UtRh/1LUYf9SvCyiorwsoqK8LKKivCyioI4Bn2iOAZ9ojgGfaI4Bn2pKWl8qSlpfKkpaXypKWl8p8vJmvfLyZr3y8ma98vJmvVbVXFlW1VxZVtVcWVbVXFmTQfTxk0H08ZNB9PGTQfTwpKFB0KShQdCkoUHQpKFB0")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d5g6w")
+
+[node name="10_sided_tens_flat" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_6emn2")
+skeleton = NodePath("")
+metadata/extras = {
+"shape": "1.0"
+}

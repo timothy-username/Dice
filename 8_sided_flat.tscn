@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=4 uid="uid://d3p0vr7mdjmjj"]
+
+[ext_resource type="Texture2D" uid="uid://biw1p6etw88a" path="res://external/textures/numbers.png" id="1_dk7hw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76vo"]
+resource_name = "dice material with numbers overlay"
+cull_mode = 2
+albedo_texture = ExtResource("1_dk7hw")
+roughness = 0.554545
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wgldg"]
+_surfaces = [{
+"aabb": AABB(-0.341867, -0.341867, -0.341867, 0.683733, 0.683733, 0.683733),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAQAAgAFAAAAAwAFAAIAAAAFAAQABAAFAAMA"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("/3//f///AAD/fwAA/38AAAAA/3//fwAA/3//fwAAAAD///9//38AAP9/////fwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eqy6g"]
+resource_name = "dice_Solid_013"
+_surfaces = [{
+"aabb": AABB(-0.341867, -0.341867, -0.341867, 0.683733, 0.683733, 0.683733),
+"attribute_data": PackedByteArray("qr7iuynMf2ao2eK7AOWcu3/yOWb//5y7e5nS//umb6p6tNL/FZTivJShgGcTr+K8H6ljvJ62AWcexGO8X6///968nKpeyv//j4HC/w6PYKqNnML/kdK6uxHgWGaQ7bq7"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcA"),
+"material": SubResource("StandardMaterial3D_i76vo"),
+"name": "dice material with numbers overlay",
+"primitive": 3,
+"uv_scale": Vector4(2.04152, 0.364534, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/3//f///h/b/fwAA/3+H9gAA/3//f4f2////f/9/h/b/fwAA/3+H9v9//3///4f2/3//fwAA4uj/fwAA/3/i6P///3//f+LoAAD/f/9/4uj/fwAA/3/i6P9//38AAOLoAAD/f/9/P6j/f////38/qP9//3///z+o/3//f///P6j/f////38/qP///3//fz+o////f/9/k+H/f////3+T4f9//38AAJPh/3//fwAAk+H/f////3+T4QAA/3//f5PhY2GCaGNhgmhjYYJofBdi4XwXYuF8F2Lh5goyreYKMq3mCjKtMi0YdTItGHUyLRh1Ga9ivRmvYr0Zr2K9nMIaL5zCGi+cwhovsKegC7CnoAuwp6ALn4tN2J+LTdifi03Y")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wgldg")
+
+[node name="8_sided_flat" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_eqy6g")
+skeleton = NodePath("")

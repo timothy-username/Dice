@@ -1,0 +1,1 @@
+class_name ColorOperations extends Node
