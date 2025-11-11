@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cf27c2j172gac"]
+
+[ext_resource type="Texture2D" uid="uid://c5f5bm16hns4r" path="res://white_14_transp.png" id="1_pw51k"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+depth_draw_mode = 2
+albedo_texture = ExtResource("1_pw51k")
+disable_receive_shadows = true

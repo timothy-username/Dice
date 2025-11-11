@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://df05vwijddjh6"]
+
+[ext_resource type="Texture2D" uid="uid://c5f5bm16hns4r" path="res://white_14_transp.png" id="1_frf4l"]
+
+[resource]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_frf4l")

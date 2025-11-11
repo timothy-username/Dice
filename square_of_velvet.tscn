@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfjcgn3a4gc78"]
+
+[ext_resource type="Texture2D" uid="uid://ctrc8h6xyslc5" path="res://textures/fabric_190-1K/fabric_190_Albedo-1K_black.png" id="1_oheqc"]
+[ext_resource type="Texture2D" uid="uid://hk4roffmhmtv" path="res://textures/fabric_190-1K/fabric_190_AmbientOcclusion-1K.png" id="2_6nfl6"]
+[ext_resource type="Texture2D" uid="uid://da11ql7l2kltk" path="res://textures/fabric_190-1K/fabric_190_Height-1K.png" id="3_3xkpp"]
+[ext_resource type="Texture2D" uid="uid://dkbuyp00cvqdm" path="res://textures/fabric_190-1K/fabric_190_Normal-1K.png" id="4_uf1av"]
+[ext_resource type="Texture2D" uid="uid://ccjj3u2qltdaq" path="res://textures/fabric_190-1K/fabric_190_Roughness-1K.png" id="5_a3odt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncwi2"]
+albedo_texture = ExtResource("1_oheqc")
+metallic = 1.0
+metallic_specular = 0.94
+roughness_texture = ExtResource("5_a3odt")
+emission = Color(0.164306, 0.24527, 0.329023, 1)
+emission_energy_multiplier = 0.28
+normal_enabled = true
+normal_scale = 1.47
+normal_texture = ExtResource("4_uf1av")
+rim_tint = 0.6
+ao_texture = ExtResource("2_6nfl6")
+heightmap_scale = 0.224
+heightmap_texture = ExtResource("3_3xkpp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e78q3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_44r77"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f3ncs"]
+resource_name = "square_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(182, 86, 254, 255, 255, 255, 182, 86, 254, 255, 255, 255, 182, 86, 182, 86),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_e78q3"),
+"primitive": 3,
+"uv_scale": Vector4(2.95224, 2.95224, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_44r77")
+
+[node name="square_of_velvet" type="MeshInstance3D"]
+transform = Transform3D(2.60824, 0, 0, 0, 2.60824, 0, 0, 0, 2.60824, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ncwi2")
+mesh = SubResource("ArrayMesh_f3ncs")
+skeleton = NodePath("")

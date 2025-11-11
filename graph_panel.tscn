@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://boswwsgpdebuk"]
+
+[ext_resource type="Theme" uid="uid://dsgtqtq7xu0sj" path="res://graphs_theme.tres" id="1_n0h2x"]
+[ext_resource type="Script" uid="uid://q36d3c1d7cfc" path="res://graph_panel.gd" id="2_64tkf"]
+
+[node name="GraphPanel" type="Panel"]
+custom_minimum_size = Vector2(160, 160)
+theme = ExtResource("1_n0h2x")
+script = ExtResource("2_64tkf")

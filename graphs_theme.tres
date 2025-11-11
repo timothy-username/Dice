@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dsgtqtq7xu0sj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ompg"]
+bg_color = Color(0.77, 0.677343, 0.6237, 0.227451)
+
+[resource]
+GraphPanel/base_type = &"Control"
+Panel/styles/panel = SubResource("StyleBoxFlat_5ompg")

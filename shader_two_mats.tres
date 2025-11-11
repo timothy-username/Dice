@@ -1,0 +1,94 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://5dmvb1wnu5k4"]
+
+[ext_resource type="Texture2D" uid="uid://d2hquq1mjhgrw" path="res://white_14.png" id="1_cv0g1"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_cv0g1"]
+parameter_name = "foreground_color"
+default_value_enabled = true
+default_value = Color(0.911191, 0.887063, 0, 1)
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_6q0ub"]
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_cv0g1"]
+constant = 0.2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_6q0ub"]
+constant = 1.0
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_hl0ys"]
+output_port_for_preview = 0
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(1, 1, 1, 1), 2, Quaternion(0.5, 0.5, 0.5, 0.5)]
+expanded_output_ports = [0]
+op_type = 5
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_qygn6"]
+output_port_for_preview = 0
+texture = ExtResource("1_cv0g1")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_xvfg2"]
+parameter_name = "background_color"
+default_value_enabled = true
+default_value = Color(0.278447, 0.388997, 1, 1)
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 background_color : source_color = vec4(0.278447, 0.388997, 1.000000, 1.000000);
+uniform vec4 foreground_color : source_color = vec4(0.911191, 0.887063, 0.000000, 1.000000);
+uniform sampler2D tex_frg_8 : source_color;
+
+
+
+void fragment() {
+// ColorParameter:9
+	vec4 n_out9p0 = background_color;
+
+
+// ColorParameter:10
+	vec4 n_out10p0 = foreground_color;
+
+
+// Texture2D:8
+	vec4 n_out8p0 = texture(tex_frg_8, UV);
+
+
+// Mix:5
+	vec4 n_out5p0 = mix(n_out9p0, n_out10p0, n_out8p0);
+
+
+// FloatConstant:12
+	float n_out12p0 = 0.200000;
+
+
+// FloatConstant:13
+	float n_out13p0 = 1.000000;
+
+
+// Output:0
+	ALBEDO = vec3(n_out5p0.xyz);
+	ROUGHNESS = n_out12p0;
+	CLEARCOAT = n_out13p0;
+
+
+}
+"
+preview_params/background_color = "Color(0.686517, 0.0029277, 0.939843, 1)"
+nodes/fragment/0/position = Vector2(560, 160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMix_hl0ys")
+nodes/fragment/5/position = Vector2(260, 120)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_qygn6")
+nodes/fragment/8/position = Vector2(-20, 440)
+nodes/fragment/9/node = SubResource("VisualShaderNodeColorParameter_xvfg2")
+nodes/fragment/9/position = Vector2(-280, 120)
+nodes/fragment/10/node = SubResource("VisualShaderNodeColorParameter_cv0g1")
+nodes/fragment/10/position = Vector2(-300, 380)
+nodes/fragment/11/node = SubResource("VisualShaderNodeUVFunc_6q0ub")
+nodes/fragment/11/position = Vector2(-340, 640)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatConstant_cv0g1")
+nodes/fragment/12/position = Vector2(360, 580)
+nodes/fragment/13/node = SubResource("VisualShaderNodeFloatConstant_6q0ub")
+nodes/fragment/13/position = Vector2(280, 740)
+nodes/fragment/connections = PackedInt32Array(5, 0, 0, 0, 8, 0, 5, 2, 9, 0, 5, 0, 10, 0, 5, 1, 13, 0, 0, 13, 12, 0, 0, 3)

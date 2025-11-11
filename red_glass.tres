@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c3bno87fmu4pn"]
+
+[ext_resource type="Material" uid="uid://cf27c2j172gac" path="res://mat_number_14_inside.tres" id="1_3yuqo"]
+[ext_resource type="Shader" uid="uid://nwauder3grjs" path="res://glass.gdshader" id="2_3fiuj"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_3yuqo")
+shader = ExtResource("2_3fiuj")
+shader_parameter/albedo = Color(0.909804, 0, 0.368627, 0.188235)
+shader_parameter/roughness = 0.273
+shader_parameter/refraction = 0.5
+shader_parameter/refraction_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/normal_strength = 0.0
+shader_parameter/edge_color = Color(0.409491, 1.08294e-07, 0.214459, 1)
+shader_parameter/surface_contribution = 3.0
+shader_parameter/specular_contribution = 10.0
+shader_parameter/refraction_contribution = 10.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

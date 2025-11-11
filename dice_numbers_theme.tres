@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ica7mw5l2n6x"]
+
+[ext_resource type="FontFile" uid="uid://dmvg7j3bfrvng" path="res://external/super_normal_font.ttf" id="1_0w1n6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vfyo"]
+bg_color = Color(0.666667, 0.501961, 0.384314, 0)
+
+[resource]
+default_font = ExtResource("1_0w1n6")
+Label/colors/font_color = Color(0.69, 0.606165, 0.5037, 1)
+Label/colors/font_outline_color = Color(0.230386, 0.129599, 0.0828881, 1)
+Label/colors/font_shadow_color = Color(0.52, 0.592, 1, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 12
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 24
+Label/styles/normal = SubResource("StyleBoxFlat_1vfyo")
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27lidvl8mml2"]
+
+[ext_resource type="Theme" uid="uid://ica7mw5l2n6x" path="res://dice_numbers_theme.tres" id="1_rlpk0"]
+[ext_resource type="Script" uid="uid://c7fruulm4rqqs" path="res://number_of_dice_label.gd" id="2_i4s54"]
+
+[node name="NumberOfDiceLabel" type="Label"]
+size_flags_horizontal = 10
+theme = ExtResource("1_rlpk0")
+text = "4 d20"
+horizontal_alignment = 1
+script = ExtResource("2_i4s54")
