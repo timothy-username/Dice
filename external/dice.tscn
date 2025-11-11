@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://beb5wy8oselj"]
+
+[ext_resource type="PackedScene" uid="uid://dmyafw4lhsuf2" path="res://dice.blend" id="1_ju2fo"]
+
+[node name="dice" instance=ExtResource("1_ju2fo")]

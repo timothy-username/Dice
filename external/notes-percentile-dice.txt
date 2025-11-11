@@ -1,0 +1,29 @@
+the "00-0 method" and the "90-0 (or high/low) method". 
+In both methods, you roll two ten-sided dice (d10s): one marked with multiples of ten (00, 10, 20, etc.) for the tens digit, and one marked 0-9 for the ones digit. 
+1. The 00-0 method
+This is the most common and official method described in the Dungeons & Dragons Player's Handbook. 
+
+		The 0-9 die is always read as a single digit.
+		The "0" on the ones die is read as a 0, unless the tens die also shows "00."
+		If you roll "00" on the tens die and "0" on the ones die, the result is read as 100.
+		Any other combination of "00" on the tens die with a number on the ones die (e.g., 00 and 7) is read as that single-digit number (7). 
+
+Examples:
+
+		Roll: 70 and 1 = 71
+		Roll: 00 and 5 = 5
+		Roll: 00 and 0 = 100
+		Roll: 10 and 0 = 10 
+
+2. The 90-0 (or high/low) method
+This older, less common method treats the ones die differently. 
+
+		In this approach, the "0" on the ones die is always read as a 10.
+		This removes the special "100" case, but makes some rolls read differently. For example, a 90 and a 0 are added together to make 100. 
+
+Examples:
+
+		Roll: 70 and 1 = 71
+		Roll: 00 and 5 = 5
+		Roll: 00 and 0 = 10
+		Roll: 10 and 0 = 20 (10+10) 
