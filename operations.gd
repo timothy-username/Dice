@@ -117,6 +117,7 @@ func set_percentile_materials( r:RigidBody3D )->void:
 	
 func set_materials( r:RigidBody3D )->void:
 	var fg_mat = %UI.get_current_fg_material()
+	fg_mat.albedo_texture_msdf = false
 	var bg_mat = %UI.get_current_bg_material()
 	var m:MeshInstance3D = r.get_child(1)
 	m.material_override = bg_mat

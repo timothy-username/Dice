@@ -889,16 +889,16 @@ size_flags_vertical = 4
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/hover = ExtResource("19_a3503")
 theme_override_styles/normal = ExtResource("19_b3v4a")
+theme_override_styles/hover = ExtResource("19_a3503")
 script = ExtResource("14_i5u1p")
 
 [node name="FgColorPicker" type="ColorPickerButton" parent="UI/BaseLeftContainer/ColorControlsContainer/ColorPickerContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/hover = ExtResource("19_a3503")
 theme_override_styles/normal = ExtResource("19_b3v4a")
+theme_override_styles/hover = ExtResource("19_a3503")
 script = ExtResource("15_ehd2a")
 
 [node name="Scene" type="Node3D" parent="."]
