@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ngg8jo7iwwgi"]
+
+[node name="Lights" type="Node3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.654352, -0.361154, -0.664373, -0.755352, 0.353506, 0.551794, 0.0355775, 0.862903, -0.504116, -2.72728, 5.40962, -3.01811)
+light_color = Color(0.999998, 0.946464, 0.945357, 1)
+light_energy = 3.556
+shadow_enabled = true
+shadow_blur = 2.146
+spot_range = 20.8549
+spot_angle = 61.4571
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.997519, -4.19083e-08, -0.0703989, -0.0615498, -0.485385, 0.872131, -0.0341706, 0.874301, 0.484181, 1.6094, 3.36066, 5.40494)
+light_color = Color(0.962479, 1, 0.958038, 1)
+light_energy = 2.505
+shadow_enabled = true
+shadow_blur = 1.392
+spot_range = 35.3243
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.594599, -0.40718, 0.693294, 0.803296, -0.264203, 0.533772, -0.0341706, 0.874301, 0.484181, 7.54903, 4.32726, 1.11933)
+light_color = Color(0.888517, 0.934846, 0.9994, 1)
+light_energy = 9.333
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_normal_bias = 0.167
+shadow_blur = 0.501
+spot_range = 31.9935

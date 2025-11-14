@@ -112,6 +112,8 @@ jolt_physics_3d/limits/world_boundary_shape_size=6.0
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/default_filters/anisotropic_filtering_level=3
 anti_aliasing/screen_space_roughness_limiter/amount=1.08
 anti_aliasing/screen_space_roughness_limiter/limit=0.24

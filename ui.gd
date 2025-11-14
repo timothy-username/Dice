@@ -40,7 +40,11 @@ func _process( _tick:float ):
 	elif Input.is_action_just_pressed( "quit"):_end()
 	
 func _end()->void:
+	_save_everything()
+	print( "bye-bye")
+	get_tree().quit()	
 	
+func _save_everything()->void:
 	%CameraMount.save_camera()
 	save_window()
 	save_sliders()
@@ -48,8 +52,7 @@ func _end()->void:
 	Settings.write( "General", "show_graphs", %GraphsContainer.visible)
 	graphs.save_counts()
 	Settings.save()
-	print( "bye-bye")
-	get_tree().quit()	
+	print( "saved everything" )	
 
 func save_sliders()->void:
 	print("UI: saving brightness ", %BrightnessSlider.value)
@@ -113,15 +116,20 @@ func get_current_fg_material()->Material:
 	return get_current_button().die.material_overlay
 	
 func get_current_bg_material()->Material:
+	var mat = get_current_button().die.material_override
+	#mat.roughness = 0.1
 	return get_current_button().die.material_override	
 
 func set_color_buttons_from_settings()->void:
 	print("setting button colors from settings ")
 	for i in range(1,6):
+		
 		var bg:String = "color"+str(i)+"_bg"
 		var fg:String = "color"+str(i)+"_fg"
 		color_buttons.get(i).set_button_bg_color( Settings.read("Colors",bg))
 		color_buttons.get(i).set_button_fg_color( Settings.read("Colors",fg))
+		color_buttons.get(i).die.material_override.roughness = 0.1
+		color_buttons.get(i).die.material_overlay.albedo_texture_msdf = false;
 
 	
 	current_color_button = int(Settings.read("General","current_color"))

@@ -2,6 +2,10 @@ extends Node
 
 @onready var ui = %UI
 @onready var quick_tests = %QuickTests
+@onready var world_environment = %WorldEnvironment
+@onready var lights_forward_plus = %LightsForwardPlus
+@onready var lights_compatibility = %LightsCompatibility
+
 
 func _ready():
 	#quick_tests.simulate_rolls( 6 )
@@ -32,6 +36,33 @@ func _ready():
 		
 		DisplayServer.window_set_size(size)
 		DisplayServer.window_set_position(pos)	
+		
+	handle_rendering_method()
+
+## we have different lights, shadow tweaks and world environments for 
+## forward+ or opengl compatibility
+func handle_rendering_method()->void:
+	var method = RenderingServer.get_current_rendering_method()
+	## "forward_plus"  or "gl_compatibility"
+	print( "render method = " , method )
+	if method == "forward_plus":
+		setup_forward_plus()
+	else:
+		setup_gl_compatibility()
+		
+func setup_forward_plus()->void:
+	world_environment.environment = load("res://WorldEnvironment_ForwardPlus.tres")
+	lights_forward_plus.visible = true
+	lights_compatibility.visible = false
+	
+func setup_gl_compatibility()->void:
+	
+	world_environment.environment = load("res://WorldEnvironment_Compatibility.tres")
+	lights_forward_plus.visible = false
+	lights_compatibility.visible = true	
+			
+		
+	
 		
 		
 

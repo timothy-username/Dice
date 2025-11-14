@@ -73,7 +73,8 @@ func toggle_color_percentile_mode()->void:
 		%PercentileDifferentColors.release_focus()				
 
 func clear_and_pop()->void:
-	clear(true)			
+	clear(true)	
+	ui._save_everything()		
 
 ## remove all dice from the board
 func clear( with_sound:bool )->void:
@@ -97,6 +98,8 @@ func clear( with_sound:bool )->void:
 	if with_sound:  
 		%ClearSound.pitch_scale = randf_range(0.9,1.2)
 		%ClearSound.play()	
+	
+	
 
 
 func set_percentile_materials( r:RigidBody3D )->void:

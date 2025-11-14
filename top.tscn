@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://360wj44tjd2n"]
+[gd_scene load_steps=75 format=4 uid="uid://360wj44tjd2n"]
 
 [ext_resource type="Script" uid="uid://67i8xmswmag6" path="res://operations.gd" id="1_fj57p"]
 [ext_resource type="Script" uid="uid://bwot1nxc8lvo5" path="res://top.gd" id="1_mj5mc"]
@@ -42,9 +42,14 @@
 [ext_resource type="StyleBox" uid="uid://d03k3ven2mj23" path="res://color_picker_stylebox_hover.tres" id="19_a3503"]
 [ext_resource type="StyleBox" uid="uid://csqkjxqwvsnup" path="res://color_picker_stylebox.tres" id="19_b3v4a"]
 [ext_resource type="Script" uid="uid://dvry1eo7g4qlh" path="res://scene.gd" id="19_u0bt4"]
+[ext_resource type="Material" uid="uid://uby8w8gscold" path="res://plastic_dice_mat_compatibility.tres" id="22_ykrpr"]
+[ext_resource type="Material" uid="uid://1q0g0p6ey7b8" path="res://mat_dice_numbers_overlay.tres" id="23_lrnjm"]
 [ext_resource type="AudioStream" uid="uid://drem2083xebqk" path="res://sounds/pop-cartoon-357572.ogg" id="27_ttau3"]
 [ext_resource type="AudioStream" uid="uid://s21ckxjnjpk7" path="res://sounds/throwing_dice.ogg" id="28_a4uo3"]
+[ext_resource type="Environment" uid="uid://c4l41cdtsfxpw" path="res://WorldEnvironment_Compatibility.tres" id="29_7c514"]
+[ext_resource type="PackedScene" uid="uid://ngg8jo7iwwgi" path="res://lights_ForwardPlus.tscn" id="30_jng1h"]
 [ext_resource type="Texture2D" uid="uid://8esla1h5xllt" path="res://textures/height_map_normal.png" id="31_a66ms"]
+[ext_resource type="PackedScene" uid="uid://cbcrjt3ovlb21" path="res://lights_compatibility.tscn" id="31_jng1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ei5l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -71,24 +76,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_2hob3")
 
 [sub_resource type="Theme" id="Theme_yai7g"]
 default_font_size = 15
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrap4"]
-albedo_color = Color(0.419813, 0.419813, 0.419813, 1)
-metallic_specular = 0.29
-roughness = 0.0
-clearcoat_enabled = true
-clearcoat = 0.57
-clearcoat_roughness = 0.88
-subsurf_scatter_strength = 0.6
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbmy2"]
-render_priority = 1
-transparency = 4
-albedo_color = Color(0.051971, 0.051971, 0.051971, 1)
-albedo_texture = ExtResource("2_oi2su")
-albedo_texture_msdf = true
-metallic_specular = 0.0
-roughness = 0.89
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51l3o"]
 resource_name = "dice material with numbers overlay"
@@ -201,26 +188,6 @@ albedo_texture = ExtResource("2_oi2su")
 albedo_texture_msdf = true
 metallic_specular = 0.0
 roughness = 0.89
-
-[sub_resource type="Environment" id="Environment_58ij3"]
-background_energy_multiplier = 0.0
-ambient_light_source = 2
-ambient_light_color = Color(0.65834, 0.65834, 0.65834, 1)
-ambient_light_energy = 0.89
-tonemap_mode = 3
-tonemap_exposure = 3.2
-ssao_enabled = true
-ssao_radius = 0.31
-ssao_intensity = 6.23
-ssao_power = 1.72305
-ssao_sharpness = 1.0
-sdfgi_use_occlusion = true
-sdfgi_bounce_feedback = 0.37
-fog_light_energy = 0.34
-fog_density = 0.001
-volumetric_fog_density = 0.3517
-volumetric_fog_albedo = Color(0.0923971, 0.0923971, 0.0923971, 1)
-volumetric_fog_temporal_reprojection_amount = 0.99
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cid3t"]
 resource_name = "Material"
@@ -733,8 +700,8 @@ light_volumetric_fog_energy = 0.0
 
 [node name="twelve_sided_shape" type="MeshInstance3D" parent="UI/BaseLeftContainer/ColorControlsContainer/ColorButtonsContainer/ColorButton1/SubViewport"]
 transform = Transform3D(0.997434, -0.071497, 0.00349065, -0.0714974, -0.99744, 8.74227e-08, 0.00348171, -0.00024966, -0.999994, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_wrap4")
-material_overlay = SubResource("StandardMaterial3D_kbmy2")
+material_override = ExtResource("22_ykrpr")
+material_overlay = ExtResource("23_lrnjm")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_tb7lw")
 skeleton = NodePath("")
@@ -907,36 +874,24 @@ script = ExtResource("19_u0bt4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Scene"]
 unique_name_in_owner = true
-environment = SubResource("Environment_58ij3")
+environment = ExtResource("29_7c514")
 
-[node name="Lights" type="Node3D" parent="Scene"]
+[node name="LightsForwardPlus" parent="Scene" instance=ExtResource("30_jng1h")]
+unique_name_in_owner = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(-0.654352, -0.361154, -0.664373, -0.755352, 0.353506, 0.551794, 0.0355775, 0.862903, -0.504116, -2.72728, 5.40962, -3.01811)
-light_color = Color(0.999998, 0.946464, 0.945357, 1)
-light_energy = 3.556
-shadow_enabled = true
-shadow_blur = 2.146
-spot_range = 20.8549
-spot_angle = 61.4571
+[node name="LightsCompatibility" parent="Scene" instance=ExtResource("31_jng1h")]
+unique_name_in_owner = true
+visible = false
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(-0.997519, -4.19083e-08, -0.0703989, -0.0615498, -0.485385, 0.872131, -0.0341706, 0.874301, 0.484181, 1.6094, 3.36066, 5.40494)
-light_color = Color(0.962479, 1, 0.958038, 1)
-light_energy = 2.505
-shadow_enabled = true
-shadow_blur = 1.392
-spot_range = 35.3243
+[node name="SpotLight3D" parent="Scene/LightsCompatibility" index="0"]
+shadow_reverse_cull_face = true
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(-0.594599, -0.40718, 0.693294, 0.803296, -0.264203, 0.533772, -0.0341706, 0.874301, 0.484181, 7.54903, 4.32726, 1.11933)
-light_color = Color(0.888517, 0.934846, 0.9994, 1)
-light_energy = 9.333
-shadow_enabled = true
-shadow_bias = 0.02
-shadow_normal_bias = 0.167
-shadow_blur = 0.501
-spot_range = 31.9935
+[node name="SpotLight3D2" parent="Scene/LightsCompatibility" index="1"]
+shadow_bias = 0.05
+
+[node name="SpotLight3D3" parent="Scene/LightsCompatibility" index="2"]
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
 
 [node name="Sounds" type="Node3D" parent="Scene"]
 
@@ -1032,11 +987,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.721548, 0)
 
 [node name="TestDice" type="Node3D" parent="Scene"]
 unique_name_in_owner = true
-visible = false
 
 [node name="4_sided_rigid" parent="Scene/TestDice" instance=ExtResource("11_unqjn")]
 transform = Transform3D(0.998353, 0.0573582, 0.00134962, -0.0573741, 0.998077, 0.0234843, 0, -0.0235231, 0.999723, -1.62354, 0.592517, 0)
-visible = false
 
 [node name="face01" parent="Scene/TestDice/4_sided_rigid/FaceNormals" index="0"]
 visible = true
@@ -1115,4 +1068,6 @@ transform = Transform3D(0.992692, -0.0350404, -0.115479, 0.0386471, 0.998828, 0.
 [connection signal="color_changed" from="UI/BaseLeftContainer/ColorControlsContainer/ColorPickerContainer/FgColorPicker" to="UI" method="_on_fg_color_picker_color_changed"]
 [connection signal="popup_closed" from="UI/BaseLeftContainer/ColorControlsContainer/ColorPickerContainer/FgColorPicker" to="UI/BaseLeftContainer/ColorControlsContainer/ColorPickerContainer/FgColorPicker" method="popup_closed"]
 
+[editable path="Scene/LightsForwardPlus"]
+[editable path="Scene/LightsCompatibility"]
 [editable path="Scene/TestDice/4_sided_rigid"]
