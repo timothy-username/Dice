@@ -987,6 +987,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.721548, 0)
 
 [node name="TestDice" type="Node3D" parent="Scene"]
 unique_name_in_owner = true
+visible = false
 
 [node name="4_sided_rigid" parent="Scene/TestDice" instance=ExtResource("11_unqjn")]
 transform = Transform3D(0.998353, 0.0573582, 0.00134962, -0.0573741, 0.998077, 0.0234843, 0, -0.0235231, 0.999723, -1.62354, 0.592517, 0)
